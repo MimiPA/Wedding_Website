@@ -1,0 +1,129 @@
+CREATE TABLE tabel_login (
+    id_login INT(3) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(30) NOT NULL,
+    password VARCHAR(10) NOT NULL,
+    email VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE tabel_login_level (
+    id_login INT(3) NOT NULL,
+    level ENUM('user','admin') NOT NULL DEFAULT 'user',
+    CONSTRAINT tabel_login_id_login_fk
+    FOREIGN KEY(id_login)
+    REFERENCES tabel_login(id_login)
+);
+
+CREATE TABLE tabel_kota (
+    id_kota INT(3) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nama_kota VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE tabel_photographer (
+    id_photographer INT(3) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nama_photographer VARCHAR(20) NOT NULL,
+    gambar_photographer VARCHAR(20) NOT NULL,
+    biaya_photographer INT(10) NOT NULL
+);
+
+CREATE TABLE tabel_decoration (
+    id_decoration INT(3) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nama_decoration VARCHAR(20) NOT NULL,
+    gambar_decoration VARCHAR(20) NOT NULL,
+    biaya_decoration INT(10) NOT NULL
+);
+
+CREATE TABLE tabel_sovernir (
+    id_sovernir INT(3) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nama_sovernir VARCHAR(20) NOT NULL,
+    gambar_sovernir VARCHAR(20) NOT NULL,
+    biaya_sovernir INT(10) NOT NULL
+);
+
+INSERT INTO tabel_kota(nama_kota) VALUES
+('Makassar'),
+('Korea'),
+('Jepang');
+
+INSERT INTO tabel_decoration (nama_decoration, gambar_decoration, biaya_decoration) VALUES
+('Flower Lighting', 'decoration1.jpg', 10000000),
+('White and Green', 'decoration2.jpg', 1000000),
+('Floral Gardenia', 'decoration3.jpg', 2000000),
+('Red Rose Design', 'decoration4.jpg', 15000000),
+('Royal Bouquet', 'decoration5.jpg', 5000000),
+('Lavender Classy', 'decoration6.jpg', 3000000),
+('Fairy Tale', 'decoration7.jpg', 2500000),
+('White Glowing', 'decoration8.jpg', 7000000),
+('Sparkling Night', 'decoration9.jpg', 9000000);
+
+INSERT INTO tabel_photographer (nama_photographer, gambar_photographer, biaya_photographer) VALUES
+('Ian Alaric', 'foto1.png', 3000000),
+('Kartorius W. Gozali', 'foto2.png', 2000000),
+('Samuel M. Liem', 'foto3.png', 2500000),
+('Reny E. Malioy', 'foto4.png', 1000000),
+('Trofan P. Pranata', 'foto5.png', 3000000),
+('Putra Alexander', 'foto6.png', 3500000),
+('Paquita Madonza', 'foto7.png', 1500000),
+('Luis Figo W.', 'foto8.png', 2000000),
+('Aaron W. Kusuma', 'foto9.png', 3000000);
+
+INSERT INTO tabel_sovernir (nama_sovernir, gambar_sovernir, biaya_sovernir) VALUES
+('Glossy Jar', 'sovernir1.jpg', 100000),
+('Custom Bag', 'sovernir2.jpg', 20000),
+('Design Glass', 'sovernir3.jpg', 25000),
+('Heart Liontin', 'sovernir4.jpg', 150000),
+('Colorful Fan', 'sovernir5.jpg', 10000),
+('Cutie Tumbler', 'sovernir6.jpg', 50000),
+('Wonderful Pen', 'sovernir7.jpg', 5000),
+('Smally Shoes', 'sovernir8.jpg', 30000),
+('Healthy Mask', 'sovernir9.jpg', 15000);
+
+CREATE TABLE tabel_paket (
+    id_paket INT(3) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nama_paket VARCHAR(20) NOT NULL,
+    biaya_paket INT(10) NOT NULL
+);
+
+CREATE TABLE tabel_detail_paket (
+    id_paket INT(3) NOT NULL,
+    id_kota INT(3) NOT NULL,
+    id_photographer INT(3) NOT NULL,
+    id_decoration INT(3) NOT NULL,
+    id_sovernir INT(3) NOT NULL,
+    CONSTRAINT tabel_paket_id_paket_fk
+    FOREIGN KEY(id_paket)
+    REFERENCES tabel_paket(id_paket),
+    CONSTRAINT tabel_kota_id_kota_fk
+    FOREIGN KEY(id_kota)
+    REFERENCES tabel_kota(id_kota),
+    CONSTRAINT tabel_photographer_id_photographer_fk
+    FOREIGN KEY(id_photographer)
+    REFERENCES tabel_photographer(id_photographer),
+    CONSTRAINT tabel_decoration_id_decoration_fk
+    FOREIGN KEY(id_decoration)
+    REFERENCES tabel_decoration(id_decoration),
+    CONSTRAINT tabel_sovernir_id_sovernir_fk
+    FOREIGN KEY(id_sovernir)
+    REFERENCES tabel_sovernir(id_sovernir)
+);
+
+INSERT INTO tabel_paket (nama_paket, biaya_paket) VALUES
+('Diamond Luxury', 13100000),
+('Classic Elegant', 16150000),
+('Simply Unique', 4005000),
+('Silver Package', 3020000),
+('Gold Wedding', 8010000),
+('Miny Bless', 9030000),
+('Royal Family', 4525000),
+('Middle Package', 6550000),
+('Brilliant Glamour', 12015000);
+
+INSERT INTO tabel_detail_paket (id_paket, id_kota, id_photographer, id_decoration, id_sovernir) VALUES
+(1, 1, 1, 1, 1),
+(2, 1, 4, 4, 4),
+(3, 1, 7, 7, 7),
+(4, 2, 2, 2, 2),
+(5, 2, 5, 5, 5),
+(6, 2, 8, 8, 8),
+(7, 3, 3, 3, 3),
+(8, 3, 6, 6, 6),
+(9, 3, 9, 9, 9);

@@ -1,0 +1,574 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a,
+span,
+a:hover {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.5em;
+}
+.tpp-page {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.tpp-navbar {
+    padding: 60px 0px;
+    width: 23%;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    overflow-y: scroll;
+    z-index: 1001;
+    background: rgb(122, 22, 22);
+    scrollbar-width: none;
+}
+.tpp-logo {
+    text-align: center;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    display: block;
+    width: 100%;
+    position: relative;
+    color: #000;
+    line-height: 1.2em;
+    letter-spacing: 0px;
+}
+aside .tpp-logo a i {
+    color: #000;
+    font-size: 16px;
+    vertical-align: super;
+}
+.tpp-listmenu {
+    display: block;
+}
+.tpp-listmenu ul {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.tpp-listmenu ul li {
+    margin: 9px 0 9px 0;
+    padding: 0 0 9px 0;
+    font-size: 16px;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.tpp-listmenu ul li a {
+    color: #000;
+    text-decoration: none;
+    position: relative;
+    padding: 0;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 400;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    border-bottom: 1px solid transparent;
+}
+.tpp-listmenu ul li a:hover {
+    border-bottom: 1px solid #000;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.tpp-listmenu ul li.acitve a {
+    color: orange;
+}
+.tpp-footer {
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    left: 0;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 400;
+    color: #666;
+}
+.tpp-footer .tpp-social a {
+    color: #666;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    background: transparent;
+    margin: 0 5px 15px 0;
+    text-align: center;
+    font-size: 24px;
+}
+.tpp-main {
+    width: 77%;
+    float: right;
+    transition: 0.5s;
+}
+
+/*content swiper slider */
+.swiper-slide .tpp-desc {
+    position: absolute;
+    width: 30%;
+    bottom: 15px;
+    left: 10px;
+    padding: 30px;
+    background: #fff;
+}
+.swiper-slide .tpp-desc .tpp-btn {
+    position: relative;
+    line-height: 1em;
+}
+.swiper-slide .tpp-desc .tpp-btn a {
+    font-family: "Nunito Sans", sans-serif;
+    background: #000;
+    border: 1px solid #000;
+    color: #fff;
+    padding: 12px 30px;
+    margin: 0;
+    font-weight: 500;
+    position: relative;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.tpp-desc h5 {
+    font-size: 2em;
+    font-family: "Dancing Script", cursive;
+}
+.swiper-slide img {
+    height: 100vh;
+    width: 77vw;
+}
+
+/*services style */
+.tpp-services {
+    padding: 100px 50px;
+}
+.tpp-services .tpp-headService {
+    margin-bottom: 30px;
+}
+.tpp-services .tpp-headService span {
+    font-family: "Dancing Script", cursive;
+    font-size: 2em;
+}
+.tpp-services .tpp-headService h3 {
+    font-family: "Nunito Sans", sans-serif;
+}
+.tpp-items {
+    position: relative;
+    overflow: hidden;
+}
+.tpp-items .tpp-itemsBtn {
+    padding: 30px 15px;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    z-index: 20;
+    height: auto;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, 0.01) 2%, rgba(0, 0, 0, 0.75) 90%);
+}
+.tpp-items img {
+    height: 50vh;
+}
+.tpp-items:hover img {
+    transform: scale(1.09, 1.09);
+    filter: brightness(70%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.tpp-items:hover .tpp-itemsBtn {
+    bottom: 0;
+}
+
+/* Footer Page */
+.tpp-footer2 {
+    padding: 100px 60px;
+    background: #000;
+    width: 77vw;
+    height: 1vh;
+}
+.tpp-footer2 h2 {
+    color: white;
+}
+.tpp-contentFooter2 {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.tpp-contentFooter2 div {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+
+
+.tpp-bannerImg {
+    position: relative;
+    width: 100%;
+    height: 10px;
+}
+.tpp-divImg::after {
+    position: absolute;
+    height: 100%;
+    right: 0;
+    left: 0;
+    content: "";
+}
+
+.bannerHead {
+    width: 100%;
+    height: 15vh;
+    top: 0;
+}
+.tpp-signContainer {
+    margin: 0px auto;
+    max-width: 32rem;
+    width: 100%;
+}
+.tpp-signContainer .tpp-signHead {
+    transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    padding: 0rem;
+    margin: 0rem;
+}
+.tpp-signContainer .tpp-signHead h1 {
+    color: rgb(36, 30, 18);
+    font-family: "Dancing Script", cursive;
+    margin: 1em 0px !important;
+    position: relative;
+    transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    font-size: 1.5rem !important;
+    line-height: 1.25 !important;
+    text-align: center;
+}
+.tpp-signBoxoutside .tpp-signBoxinside {
+    transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    padding: 1.5rem;
+    margin: 0rem;
+}
+
+.tpp-boxInput {
+    position: relative;
+    margin-bottom: 1rem;
+}
+.tpp-boxLabel {
+    cursor: text;
+    pointer-events: none;
+    color: rgb(112, 108, 100);
+    font-size: 0.875rem !important;
+    position: relative;
+    transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+}
+.tpp-boxInputinside {
+    -moz-box-align: center;
+    align-items: center;
+    display: flex;
+    margin-bottom: 0.5rem;
+    position: relative;
+    margin-top: 0.5rem;
+}
+.tpp-boxInputinside input {
+    resize: none;
+    min-width: 0px;
+    width: 100%;
+    font-size: 1rem !important;
+    font-weight: normal;
+    appearance: none;
+    background: rgb(245, 244, 242) none repeat scroll 0% 0%;
+    border: 1px solid rgb(229, 227, 221);
+    box-shadow: none;
+    box-sizing: border-box;
+    color: rgb(36, 30, 18);
+    height: 3rem;
+    outline: currentcolor none medium;
+    padding: 0.75rem 1rem;
+    transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    border-radius: 4px;
+}
+.tpp-boxBtn {
+    -moz-box-align: center;
+    align-items: center;
+    backface-visibility: hidden;
+    background-color: rgb(255, 66, 77);
+    border-radius: 9999px;
+    border: 1px solid rgb(255, 66, 77);
+    box-sizing: border-box;
+    color: rgb(255, 255, 255) !important;
+    cursor: pointer;
+    display: flex;
+    font-size: 1rem !important;
+    font-weight: 500;
+    height: unset;
+    -moz-box-pack: center;
+    justify-content: center;
+    padding: 0.5rem 1.5rem;
+}
+
+.tpp-categoryContent {
+    padding: 0 30px;
+    width: 100%;
+    margin: auto;
+}
+.tpp-categoryHeader {
+    background: linear-gradient(to top , white, grey);
+}
+
+.tpp-categoryHeader span {
+    display: block;
+    position: relative;
+    top: 12px;
+    font-family: TuesdayNight;
+    font-size: 27px;
+    color: #000000!important;
+    line-height: 1.5em;
+    margin-bottom: 0;    padding: 20px;
+}
+.tpp-categoryHeader h3 {
+    color: #000;
+    font-family: "Nunito Sans", sans-serif;
+    padding: 20px;
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+
+
+.tpp-categoryBox {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.radio-buttons {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.custom-radio input {
+    display: none;
+}
+.radio-btn {
+    margin: 10px;
+    width: 19em;
+    height: 25em;
+    border: 3px solid transparent;
+    display: inline-block;
+    border-radius: 15px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 0 20px #c3c3c367;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.radio-btn img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.radio-btn h1 {
+    position: absolute;
+    background:linear-gradient( to top, rgba(116, 88, 88, 0.726) , rgba(116, 88, 88, 0.151)) ;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px 0;
+    bottom: 0;
+    color: white;
+}
+
+.custom-radio input:checked + .radio-btn {
+    border: 5px solid #8373e6;
+    transform: translateY(-20px);
+    line-height: 8em;
+    
+}
+
+.test22 {
+    display: none;
+    margin: 10px;
+    padding: 30px;
+}
+
+.test22 h1{
+    text-align: center;
+    font-family: Comica BD;
+    font-size: 50px;
+    margin-bottom: 70px;
+}
+
+
+
+/*dashboard css */
+.tpp-bannerDashboard {
+    padding: 30px 20px;
+    line-height: 2em;
+}
+.tpp-contentDashboard{
+    background: rgba(218, 218, 218, 0.623);
+    
+}
+.tpp-boxDcontainer {
+    display: grid;
+    grid-template-areas:'A B'
+                        'C D';
+    grid-gap: 1.8em;
+}
+.tpp-boxA {
+    grid-area: A;
+    background: #1c84c6;
+}
+.tpp-boxB {
+    grid-area: B;
+    background: #f8ac59;
+}
+.tpp-boxC {
+    grid-area: C;
+    background: #ed5565;
+}
+.tpp-boxD {
+    grid-area: D;
+    background: #19b394;
+}
+
+.tpp-boxDcontainer .tpp-outerBox {
+    
+    border-radius: 10px;
+    padding: 30px 10px;
+    line-height: 2em;
+    margin: 20px;
+    display: flex;
+    color: honeydew;
+
+}
+.tpp-boxDcontainer .tpp-outerBox i {
+    position: relative;
+    font-size: 3.5em;
+    width: 40%;
+    height: 100%;
+}
+.tpp-boxDcontainer .tpp-outerBox .tpp-textBoxD  {
+    width: 60%;
+    text-align: end;
+    font-size: 1.5em;
+}
+.tpp-listContainer {
+    margin: 20px;
+}
+.tpp-listContainer .tpp-listViewBox{
+    border-radius: 10px;
+    background: red;
+}
+
+
+/* Chart CSS Content */
+.tpp-chartContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.tpp-chartContainer .tpp-chartCard {
+    background: #fff;
+    margin: 20px 0;
+    width: 350px;
+    height: 300px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+}
+.tpp-chartContainer .tpp-chartCard .tpp-chartCirlce{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    cursor: default;
+}
+.tpp-chartCard .tpp-chartCirlce .tpp-chartBox {
+    height: 100%;
+    width: 100%;
+    background: #fff ;
+    border-radius: 50%;
+    transform: translate(0, -105%) scale(0.8);
+    transition: all 0.2s;
+}
+.tpp-chartCard .tpp-chartCirlce:hover .tpp-chartBox{
+    transform: translate(0, -105%) scale(0.91);
+}
+.tpp-chartCard .tpp-chartCirlce .tpp-chartBox span , .tpp-chartContainer .tpp-chartCard .tpp-chartText{
+    background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2em;
+    font-weight: 900;
+}
+.tpp-chartCirlce .tpp-chartBox span {
+    font-size: 38px;
+    font-family: sans-serif;
+    font-weight: 600;
+    position: relative;
+    top: 40%;left: 25%;
+    transition: all 0.1s;
+}
+.tpp-chartCard .tpp-chartCirlce:hover  .tpp-chartBox span{
+    transform: scale(1);
+}
+
+/* swipper css contetnt */
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
