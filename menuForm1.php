@@ -7,6 +7,7 @@ $queryKota = mysqli_query($conn, "SELECT * FROM tabel_kota WHERE nama_kota='$nam
 $infoKota = mysqli_fetch_array($queryKota);
 $id_kota = $infoKota['id_kota'];
 
+$queryDetail = mysqli_query($conn, "SELECT * FROM tabel_kota WHERE nama_kota='$nama_kota'");
 ?>
 
 <!DOCTYPE html>
