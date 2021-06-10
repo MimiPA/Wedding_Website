@@ -9,7 +9,7 @@ $(".tpp-chartCirlce .tpp-chartBar").circleProgress(options).on('circle-animation
         $(this).parent().find("span").text(String(stepValue.toFixed(2).substr(2)) + "%");
     });
 $(".chartB .tpp-chartBar").circleProgress({
-    value: 0.70
+    value: 0.10
 });
 $(".chartC .tpp-chartBar").circleProgress({
     value: 0.60

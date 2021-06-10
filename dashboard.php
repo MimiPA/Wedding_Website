@@ -112,23 +112,11 @@ include "koneksi.php";
                     </div>
                     <div class="tpp-listContainer">
                         <div class="tpp-listViewBox">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sint voluptates illum
-                            fugit rem harum quae esse. Alias laborum perspiciatis sed dolores, quibusdam aut sint est
-                            corporis non reiciendis soluta quas assumenda! Fuga, tempore! Repellendus provident laborum
-                            expedita, quis numquam quisquam asperiores illum sit aliquid reprehenderit atque ut nisi
-                            blanditiis iure quidem molestiae nemo nam esse quos laboriosam! Dicta totam, deleniti
-                            accusamus ex quia magni. Perferendis tempora quia a nobis similique, sequi eos laboriosam
-                            quas minima, voluptatibus aspernatur sed, corrupti eveniet doloribus suscipit dicta et
-                            repellendus sapiente incidunt fugiat nesciunt quis? Nobis illo dolore soluta, aut itaque
-                            fugit, quod temporibus atque quos numquam architecto, eveniet dicta iusto ipsum sunt
-                            pariatur? Nemo culpa, dignissimos inventore repellendus nam aliquid doloribus cum saepe
-                            voluptatem, esse perspiciatis voluptate, enim excepturi quia perferendis? Minus fuga
-                            nesciunt voluptates ipsa magnam fugiat. Voluptas, recusandae fuga, odio tempora in placeat
-                            quas aperiam reprehenderit voluptates nisi eos numquam neque facere id nemo consequatur
-                            animi at aut, laboriosam odit dignissimos ipsa cumque? Expedita qui ea voluptas dolorem odit
-                            quam, quasi et at perspiciatis, numquam itaque sapiente debitis, maxime reprehenderit est
-                            cum? Cumque voluptatum libero corrupti consectetur accusamus temporibus culpa amet in
-                            veritatis maxime minus error accusantium necessitatibus, eligendi a.
+                            <form action="dashboard.php" method="GET">
+                                <input type="text" placeholder="Search" name="cari" required>
+                                <button class="btn btn-success" type="submit">Go</button>
+                            </form>
+                            <button class="btn btn-success" type="submit"><a href=""><i class='fas fa-download'> New Package</i></a></button>
                         </div>
                     </div>
                     <div class="tpp-chartContainer">
