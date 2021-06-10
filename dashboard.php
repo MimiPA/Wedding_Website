@@ -1,3 +1,7 @@
+<?php
+error_reporting(0);
+include "koneksi.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,15 +24,14 @@
     <div class="tpp-page">
         <aside class="tpp-navbar">
             <h1 class="tpp-logo">
-                <a href="index.html">MiWi<i class="far fa-registered"></i></a>
+                <a href="home.php">AAA<i class="far fa-registered"></i></a>
             </h1>
             <nav class="tpp-listmenu">
                 <ul>
-                    <li><a href="#"> menu 1</a></li>
-                    <li><a href="#"> menwaefu 1</a></li>
-                    <li><a href="#"> menu 123</a></li>
-                    <li><a href="#"> menwaef 1</a></li>
-                    <li><a href="#"> meaanu 1</a></li>
+                    <li><a href="#"> Photographer</a></li>
+                    <li><a href="#"> Decoration</a></li>
+                    <li><a href="#"> Sovernir</a></li>
+                    <li><a href="logout.php"> logout</a></li>
                 </ul>
             </nav>
             <div class="tpp-footer">
@@ -45,8 +48,7 @@
         <!-- main page -->
         <div class="tpp-main">
             <div class="tpp-bannerDashboard">
-                <h1>Judul</h1>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <h1>Dashboard</h1>
             </div>
             <div class="tpp-contentDashboard">
                 <form action="">
@@ -54,29 +56,57 @@
                         <div class="tpp-boxA tpp-outerBox">
                             <i class="fas fa-users"></i>
                             <div class="tpp-textBoxD">
-                                <h2>Lorem, ipsum.</h2>
-                                <h1>50</h1>
+                                <h2>Pengguna</h2>
+                                <h1>
+                                    <?php
+                                    $queryPengguna = mysqli_query($conn, "SELECT COUNT(id_login) AS total_pengguna FROM tabel_login;");
+                                    $infoPengguna = mysqli_fetch_array($queryPengguna);
+                                    $totalPengguna = $infoPengguna['total_pengguna'];
+                                    echo $totalPengguna;
+                                    ?>
+                                </h1>
                             </div>
                         </div>
                         <div class="tpp-boxB tpp-outerBox">
-                            <i class="fas fa-users"></i>
+                            <i class="far fa-file-alt"></i>
                             <div class="tpp-textBoxD">
-                                <h2>Lorem, ipsum.</h2>
-                                <h1>50</h1>
+                                <h2>Pesanan</h2>
+                                <h1>
+                                    <?php
+                                    $queryPesanan = mysqli_query($conn, "SELECT COUNT(id_paket) AS total_pesanan FROM tabel_detail_order;");
+                                    $infoPesanan = mysqli_fetch_array($queryPesanan);
+                                    $totalPesanan = $infoPesanan['total_pesanan'];
+                                    echo $totalPesanan;
+                                    ?>
+                                </h1>
                             </div>
                         </div>
                         <div class="tpp-boxC tpp-outerBox">
-                            <i class="fas fa-users"></i>
+                            <i class="fas fa-gift"></i>
                             <div class="tpp-textBoxD">
-                                <h2>Lorem, ipsum.</h2>
-                                <h1>50</h1>
+                                <h2>No. Paket Terlaris</h2>
+                                <h1>
+                                    <?php
+                                    $queryPaket = mysqli_query($conn, "SELECT id_paket, COUNT(id_paket) AS total_paket FROM tabel_detail_order GROUP BY id_paket ORDER BY total_paket DESC LIMIT 1");
+                                    $infoPaket = mysqli_fetch_array($queryPaket);
+                                    $totalPaket = $infoPaket['id_paket'];
+                                    echo $totalPaket;
+                                    ?>
+                                </h1>
                             </div>
                         </div>
                         <div class="tpp-boxD tpp-outerBox">
-                            <i class="fas fa-users"></i>
+                            <i class="far fa-heart"></i>
                             <div class="tpp-textBoxD">
-                                <h2>Lorem, ipsum.</h2>
-                                <h1>50</h1>
+                                <h2>Paket Tersedia</h2>
+                                <h1>
+                                    <?php
+                                    $queryTersedia = mysqli_query($conn, "SELECT COUNT(id_paket) AS total_paket FROM tabel_paket");
+                                    $infoTersedia = mysqli_fetch_array($queryTersedia);
+                                    $totalTersedia = $infoTersedia['total_paket'];
+                                    echo $totalTersedia;
+                                    ?>
+                                </h1>
                             </div>
                         </div>
                     </div>

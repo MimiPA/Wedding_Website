@@ -20,7 +20,7 @@ include "cekSession.php";
     <div class="tpp-page">
         <aside class="tpp-navbar">
             <h1 class="tpp-logo">
-                <a href="#home"><?php echo $username; ?><i class="far fa-registered"></i></a>
+                <a href="home.php"><?php echo $username; ?><i class="far fa-registered"></i></a>
             </h1>
             <nav class="tpp-listmenu">
                 <ul>
@@ -39,8 +39,8 @@ include "cekSession.php";
                     <a href="#"><i class="fab fa-pinterest-square"></i></a>
                 </div>
             </div>
-
         </aside>
+        
         <div class="tpp-main" id="home">
             <aside class="tpp-slider">
                 <div class="swiper-container">
