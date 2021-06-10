@@ -57,3 +57,4 @@ if (isset($tanggal)) {
     echo "<script>alert('Terjadi Kegagalan Tanggal. Harap Pesan Ulang')</script>";
     echo "<script>window.location.href='home.php';</script>";
 }
+?>
