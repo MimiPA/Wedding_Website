@@ -20,14 +20,13 @@ include "cekSession.php";
     <div class="tpp-page">
         <aside class="tpp-navbar">
             <h1 class="tpp-logo">
-                <a href="home.php"><?php echo $username; ?><i class="far fa-registered"></i></a>
+                <a href="#home"><?php echo $username; ?><i class="far fa-registered"></i></a>
             </h1>
             <nav class="tpp-listmenu">
                 <ul>
                     <li><a href="#"> Photographer</a></li>
                     <li><a href="#"> Decoration</a></li>
                     <li><a href="#"> Sovernir</a></li>
-                    <li><a href="#"> Package</a></li>
                     <li><a href="logout.php"> logout</a></li>
                 </ul>
             </nav>
@@ -42,7 +41,7 @@ include "cekSession.php";
             </div>
 
         </aside>
-        <div class="tpp-main">
+        <div class="tpp-main" id="home">
             <aside class="tpp-slider">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
@@ -86,7 +85,7 @@ include "cekSession.php";
                         </a>
                     </div>
                     <div class="tpp-items">
-                        <a href="menuForm2.php?nama_kota=Korea">
+                        <a href="menuForm1.php?nama_kota=Korea">
                             <div><img src="assets/img/korea.jpg" alt=""></div>
                             <div class="tpp-itemsBtn">
                                 <h2>Korea</h2>
@@ -95,7 +94,7 @@ include "cekSession.php";
                         </a>
                     </div>
                     <div class="tpp-items">
-                        <a href="menuForm3.php?nama_kota=Jepang">
+                        <a href="menuForm1.php?nama_kota=Jepang">
                             <div><img src="assets/img/jepang.jpg" alt=""></div>
                             <div class="tpp-itemsBtn">
                                 <h2>Jepang</h2>

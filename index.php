@@ -26,7 +26,6 @@
                     <li><a href="sign_in.php"> Photographer</a></li>
                     <li><a href="sign_in.php"> Decoration</a></li>
                     <li><a href="sign_in.php"> Sovernir</a></li>
-                    <li><a href="sign_in.php"> Package</a></li>
                 </ul>
             </nav>
             <div class="tpp-footer">

@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 include "koneksi.php";
-session_start();
+
 if (isset($_POST['register'])) {
     if (isset($_POST['nama']) && isset($_POST['email']) && isset($_POST['confirEmail']) && isset($_POST['password']) && isset($_POST['confirPassword'])) {
         $nama = $_POST['nama'];

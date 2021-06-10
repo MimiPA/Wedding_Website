@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap");
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 a,
 span,
 a:hover {
@@ -14,6 +14,7 @@ a:hover {
     text-decoration: none;
     color: inherit;
 }
+
 ul {
     list-style: none;
 }
@@ -24,11 +25,13 @@ body {
     font-weight: 500;
     line-height: 1.5em;
 }
+
 .tpp-page {
     width: 100%;
     position: relative;
     overflow: hidden;
 }
+
 .tpp-navbar {
     padding: 60px 0px;
     width: 23%;
@@ -41,6 +44,7 @@ body {
     background: rgb(122, 22, 22);
     scrollbar-width: none;
 }
+
 .tpp-logo {
     text-align: center;
     font-family: "Cormorant Garamond", serif;
@@ -51,23 +55,27 @@ body {
     display: block;
     width: 100%;
     position: relative;
-    color: #000;
+    color: yellow;
     line-height: 1.2em;
     letter-spacing: 0px;
 }
+
 aside .tpp-logo a i {
-    color: #000;
+    color: yellow;
     font-size: 16px;
     vertical-align: super;
 }
+
 .tpp-listmenu {
     display: block;
 }
+
 .tpp-listmenu ul {
     text-align: center;
     margin: 0;
     padding: 0;
 }
+
 .tpp-listmenu ul li {
     margin: 9px 0 9px 0;
     padding: 0 0 9px 0;
@@ -76,8 +84,9 @@ aside .tpp-logo a i {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
 .tpp-listmenu ul li a {
-    color: #000;
+    color: white;
     text-decoration: none;
     position: relative;
     padding: 0;
@@ -88,14 +97,17 @@ aside .tpp-logo a i {
     transition: 0.3s;
     border-bottom: 1px solid transparent;
 }
+
 .tpp-listmenu ul li a:hover {
-    border-bottom: 1px solid #000;
+    border-bottom: 3px solid yellow;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
+
 .tpp-listmenu ul li.acitve a {
     color: orange;
 }
+
 .tpp-footer {
     position: absolute;
     bottom: 30px;
@@ -104,10 +116,11 @@ aside .tpp-logo a i {
     font-size: 15px;
     text-align: center;
     font-weight: 400;
-    color: #666;
+    color: wheat;
 }
+
 .tpp-footer .tpp-social a {
-    color: #666;
+    color: wheat;
     width: 32px;
     height: 32px;
     line-height: 32px;
@@ -116,13 +129,16 @@ aside .tpp-logo a i {
     text-align: center;
     font-size: 24px;
 }
+
 .tpp-main {
     width: 77%;
     float: right;
     transition: 0.5s;
 }
 
+
 /*content swiper slider */
+
 .swiper-slide .tpp-desc {
     position: absolute;
     width: 30%;
@@ -131,10 +147,12 @@ aside .tpp-logo a i {
     padding: 30px;
     background: #fff;
 }
+
 .swiper-slide .tpp-desc .tpp-btn {
     position: relative;
     line-height: 1em;
 }
+
 .swiper-slide .tpp-desc .tpp-btn a {
     font-family: "Nunito Sans", sans-serif;
     background: #000;
@@ -148,33 +166,42 @@ aside .tpp-logo a i {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+
 .tpp-desc h5 {
     font-size: 2em;
     font-family: "Dancing Script", cursive;
 }
+
 .swiper-slide img {
     height: 100vh;
     width: 77vw;
 }
 
+
 /*services style */
+
 .tpp-services {
     padding: 100px 50px;
 }
+
 .tpp-services .tpp-headService {
     margin-bottom: 30px;
 }
+
 .tpp-services .tpp-headService span {
     font-family: "Dancing Script", cursive;
     font-size: 2em;
 }
+
 .tpp-services .tpp-headService h3 {
     font-family: "Nunito Sans", sans-serif;
 }
+
 .tpp-items {
     position: relative;
     overflow: hidden;
 }
+
 .tpp-items .tpp-itemsBtn {
     padding: 30px 15px;
     position: absolute;
@@ -187,11 +214,14 @@ aside .tpp-logo a i {
     z-index: 20;
     height: auto;
     box-sizing: border-box;
+    color: white;
     background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, 0.01) 2%, rgba(0, 0, 0, 0.75) 90%);
 }
+
 .tpp-items img {
     height: 50vh;
 }
+
 .tpp-items:hover img {
     transform: scale(1.09, 1.09);
     filter: brightness(70%);
@@ -201,20 +231,25 @@ aside .tpp-logo a i {
     -ms-transition: all 1s ease;
     transition: all 1s ease;
 }
+
 .tpp-items:hover .tpp-itemsBtn {
     bottom: 0;
 }
 
+
 /* Footer Page */
+
 .tpp-footer2 {
     padding: 100px 60px;
     background: #000;
     width: 77vw;
     height: 1vh;
 }
+
 .tpp-footer2 h2 {
     color: white;
 }
+
 .tpp-contentFooter2 {
     display: -ms-flexbox;
     display: flex;
@@ -223,17 +258,18 @@ aside .tpp-logo a i {
     margin-right: -15px;
     margin-left: -15px;
 }
+
 .tpp-contentFooter2 div {
     flex: 0 0 33.333333%;
     max-width: 33.333333%;
 }
-
 
 .tpp-bannerImg {
     position: relative;
     width: 100%;
     height: 10px;
 }
+
 .tpp-divImg::after {
     position: absolute;
     height: 100%;
@@ -247,16 +283,19 @@ aside .tpp-logo a i {
     height: 15vh;
     top: 0;
 }
+
 .tpp-signContainer {
     margin: 0px auto;
     max-width: 32rem;
     width: 100%;
 }
+
 .tpp-signContainer .tpp-signHead {
     transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
     padding: 0rem;
     margin: 0rem;
 }
+
 .tpp-signContainer .tpp-signHead h1 {
     color: rgb(36, 30, 18);
     font-family: "Dancing Script", cursive;
@@ -267,6 +306,7 @@ aside .tpp-logo a i {
     line-height: 1.25 !important;
     text-align: center;
 }
+
 .tpp-signBoxoutside .tpp-signBoxinside {
     transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
     padding: 1.5rem;
@@ -277,6 +317,7 @@ aside .tpp-logo a i {
     position: relative;
     margin-bottom: 1rem;
 }
+
 .tpp-boxLabel {
     cursor: text;
     pointer-events: none;
@@ -285,6 +326,7 @@ aside .tpp-logo a i {
     position: relative;
     transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
 }
+
 .tpp-boxInputinside {
     -moz-box-align: center;
     align-items: center;
@@ -293,6 +335,7 @@ aside .tpp-logo a i {
     position: relative;
     margin-top: 0.5rem;
 }
+
 .tpp-boxInputinside input {
     resize: none;
     min-width: 0px;
@@ -311,6 +354,7 @@ aside .tpp-logo a i {
     transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
     border-radius: 4px;
 }
+
 .tpp-boxBtn {
     -moz-box-align: center;
     align-items: center;
@@ -335,8 +379,9 @@ aside .tpp-logo a i {
     width: 100%;
     margin: auto;
 }
+
 .tpp-categoryHeader {
-    background: linear-gradient(to top , white, grey);
+    background: linear-gradient(to top, white, grey);
 }
 
 .tpp-categoryHeader span {
@@ -347,8 +392,10 @@ aside .tpp-logo a i {
     font-size: 27px;
     color: #000000!important;
     line-height: 1.5em;
-    margin-bottom: 0;    padding: 20px;
+    margin-bottom: 0;
+    padding: 20px;
 }
+
 .tpp-categoryHeader h3 {
     color: #000;
     font-family: "Nunito Sans", sans-serif;
@@ -358,9 +405,6 @@ aside .tpp-logo a i {
     letter-spacing: 1px;
     text-transform: uppercase;
 }
-
-
-
 
 .tpp-categoryBox {
     display: flex;
@@ -377,6 +421,7 @@ aside .tpp-logo a i {
 .custom-radio input {
     display: none;
 }
+
 .radio-btn {
     margin: 10px;
     width: 19em;
@@ -390,15 +435,17 @@ aside .tpp-logo a i {
     cursor: pointer;
     transition: 0.5s;
 }
+
 .radio-btn img {
     width: 100%;
     height: 100%;
     border-radius: 10px;
     object-fit: cover;
 }
+
 .radio-btn h1 {
     position: absolute;
-    background:linear-gradient( to top, rgba(116, 88, 88, 0.726) , rgba(116, 88, 88, 0.151)) ;
+    background: linear-gradient( to top, rgba(116, 88, 88, 0.726), rgba(116, 88, 88, 0.151));
     width: 100%;
     border-radius: 5px;
     padding: 10px 0;
@@ -406,11 +453,10 @@ aside .tpp-logo a i {
     color: white;
 }
 
-.custom-radio input:checked + .radio-btn {
+.custom-radio input:checked+.radio-btn {
     border: 5px solid #8373e6;
     transform: translateY(-20px);
     line-height: 8em;
-    
 }
 
 .test22 {
@@ -419,7 +465,7 @@ aside .tpp-logo a i {
     padding: 30px;
 }
 
-.test22 h1{
+.test22 h1 {
     text-align: center;
     font-family: Comica BD;
     font-size: 50px;
@@ -427,70 +473,77 @@ aside .tpp-logo a i {
 }
 
 
-
 /*dashboard css */
+
 .tpp-bannerDashboard {
     padding: 30px 20px;
     line-height: 2em;
 }
-.tpp-contentDashboard{
+
+.tpp-contentDashboard {
     background: rgba(218, 218, 218, 0.623);
-    
 }
+
 .tpp-boxDcontainer {
     display: grid;
-    grid-template-areas:'A B'
-                        'C D';
+    grid-template-areas: 'A B' 'C D';
     grid-gap: 1.8em;
 }
+
 .tpp-boxA {
     grid-area: A;
     background: #1c84c6;
 }
+
 .tpp-boxB {
     grid-area: B;
     background: #f8ac59;
 }
+
 .tpp-boxC {
     grid-area: C;
     background: #ed5565;
 }
+
 .tpp-boxD {
     grid-area: D;
     background: #19b394;
 }
 
 .tpp-boxDcontainer .tpp-outerBox {
-    
     border-radius: 10px;
     padding: 30px 10px;
     line-height: 2em;
     margin: 20px;
     display: flex;
     color: honeydew;
-
 }
+
 .tpp-boxDcontainer .tpp-outerBox i {
     position: relative;
     font-size: 3.5em;
     width: 40%;
     height: 100%;
 }
-.tpp-boxDcontainer .tpp-outerBox .tpp-textBoxD  {
+
+.tpp-boxDcontainer .tpp-outerBox .tpp-textBoxD {
     width: 60%;
     text-align: end;
     font-size: 1.5em;
 }
+
 .tpp-listContainer {
     margin: 20px;
 }
-.tpp-listContainer .tpp-listViewBox{
+
+.tpp-listContainer .tpp-listViewBox {
     border-radius: 10px;
     background: red;
 }
 
 
 /* Chart CSS Content */
+
 .tpp-chartContainer {
     width: 100%;
     display: flex;
@@ -498,6 +551,7 @@ aside .tpp-logo a i {
     align-items: center;
     justify-content: space-evenly;
 }
+
 .tpp-chartContainer .tpp-chartCard {
     background: #fff;
     margin: 20px 0;
@@ -508,46 +562,53 @@ aside .tpp-logo a i {
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
-    box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
 }
-.tpp-chartContainer .tpp-chartCard .tpp-chartCirlce{
+
+.tpp-chartContainer .tpp-chartCard .tpp-chartCirlce {
     position: relative;
     height: 150px;
     width: 150px;
     border-radius: 50%;
     cursor: default;
 }
+
 .tpp-chartCard .tpp-chartCirlce .tpp-chartBox {
     height: 100%;
     width: 100%;
-    background: #fff ;
+    background: #fff;
     border-radius: 50%;
     transform: translate(0, -105%) scale(0.8);
     transition: all 0.2s;
 }
-.tpp-chartCard .tpp-chartCirlce:hover .tpp-chartBox{
+
+.tpp-chartCard .tpp-chartCirlce:hover .tpp-chartBox {
     transform: translate(0, -105%) scale(0.91);
 }
-.tpp-chartCard .tpp-chartCirlce .tpp-chartBox span , .tpp-chartContainer .tpp-chartCard .tpp-chartText{
-    background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+
+.tpp-chartCard .tpp-chartCirlce .tpp-chartBox span,.tpp-chartContainer .tpp-chartCard .tpp-chartText {
     background-clip: text;
-    -webkit-text-fill-color: transparent;
     font-size: 2em;
     font-weight: 900;
 }
+
 .tpp-chartCirlce .tpp-chartBox span {
     font-size: 38px;
     font-family: sans-serif;
     font-weight: 600;
     position: relative;
-    top: 40%;left: 25%;
+    top: 40%;
+    left: 25%;
     transition: all 0.1s;
 }
-.tpp-chartCard .tpp-chartCirlce:hover  .tpp-chartBox span{
+
+.tpp-chartCard .tpp-chartCirlce:hover .tpp-chartBox span {
     transform: scale(1);
 }
 
+
 /* swipper css contetnt */
+
 .swiper-container {
     width: 100%;
     height: 100%;
@@ -557,7 +618,6 @@ aside .tpp-logo a i {
     text-align: center;
     font-size: 18px;
     background: #fff;
-
     /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;

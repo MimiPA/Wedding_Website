@@ -127,3 +127,27 @@ INSERT INTO tabel_detail_paket (id_paket, id_kota, id_photographer, id_decoratio
 (7, 3, 3, 3, 3),
 (8, 3, 6, 6, 6),
 (9, 3, 9, 9, 9);
+
+CREATE TABLE tabel_order (
+    id_order INT(3) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    tanggal_pesan DATETIME NOT NULL,
+    total_biaya INT(10) NOT NULL
+);
+
+CREATE TABLE tabel_detail_order (
+    id_order INT(3) NOT NULL,
+    id_login INT(3) NOT NULL,
+    id_paket INT(3) NOT NULL,
+    
+    CONSTRAINT tabel_order_id_order_fk
+    FOREIGN KEY(id_order)
+    REFERENCES tabel_order(id_order),
+
+    CONSTRAINT tabel_login_id_login_fk2
+    FOREIGN KEY(id_login)
+    REFERENCES tabel_login(id_login),
+
+    CONSTRAINT tabel_detail_paket_id_paket_fk
+    FOREIGN KEY(id_paket)
+    REFERENCES tabel_detail_paket(id_paket)
+);

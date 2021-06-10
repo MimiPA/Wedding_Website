@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2021 at 05:28 PM
+-- Generation Time: Jun 09, 2021 at 06:50 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -48,6 +48,27 @@ INSERT INTO `tabel_decoration` (`id_decoration`, `nama_decoration`, `gambar_deco
 (7, 'Fairy Tale', 'decoration7.jpg', 2500000),
 (8, 'White Glowing', 'decoration8.jpg', 7000000),
 (9, 'Sparkling Night', 'decoration9.jpg', 9000000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tabel_detail_order`
+--
+
+CREATE TABLE `tabel_detail_order` (
+  `id_order` int(3) NOT NULL,
+  `id_login` int(3) NOT NULL,
+  `id_paket` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tabel_detail_order`
+--
+
+INSERT INTO `tabel_detail_order` (`id_order`, `id_login`, `id_paket`) VALUES
+(1, 2, 1),
+(2, 2, 1),
+(3, 2, 5);
 
 -- --------------------------------------------------------
 
@@ -137,6 +158,27 @@ CREATE TABLE `tabel_login_level` (
 INSERT INTO `tabel_login_level` (`id_login`, `level`) VALUES
 (2, 'user'),
 (3, 'user');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tabel_order`
+--
+
+CREATE TABLE `tabel_order` (
+  `id_order` int(3) NOT NULL,
+  `tanggal_pesan` datetime NOT NULL,
+  `total_biaya` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tabel_order`
+--
+
+INSERT INTO `tabel_order` (`id_order`, `tanggal_pesan`, `total_biaya`) VALUES
+(1, '2021-06-10 00:45:48', 13100000),
+(2, '2021-06-10 00:46:44', 13100000),
+(3, '2021-06-10 00:48:02', 8010000);
 
 -- --------------------------------------------------------
 
@@ -232,6 +274,14 @@ ALTER TABLE `tabel_decoration`
   ADD PRIMARY KEY (`id_decoration`);
 
 --
+-- Indexes for table `tabel_detail_order`
+--
+ALTER TABLE `tabel_detail_order`
+  ADD KEY `tabel_order_id_order_fk` (`id_order`),
+  ADD KEY `tabel_login_id_login_fk2` (`id_login`),
+  ADD KEY `tabel_detail_paket_id_paket_fk` (`id_paket`);
+
+--
 -- Indexes for table `tabel_detail_paket`
 --
 ALTER TABLE `tabel_detail_paket`
@@ -258,6 +308,12 @@ ALTER TABLE `tabel_login`
 --
 ALTER TABLE `tabel_login_level`
   ADD KEY `tabel_login_id_login_fk` (`id_login`);
+
+--
+-- Indexes for table `tabel_order`
+--
+ALTER TABLE `tabel_order`
+  ADD PRIMARY KEY (`id_order`);
 
 --
 -- Indexes for table `tabel_paket`
@@ -300,6 +356,12 @@ ALTER TABLE `tabel_login`
   MODIFY `id_login` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `tabel_order`
+--
+ALTER TABLE `tabel_order`
+  MODIFY `id_order` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `tabel_paket`
 --
 ALTER TABLE `tabel_paket`
@@ -320,6 +382,14 @@ ALTER TABLE `tabel_sovernir`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `tabel_detail_order`
+--
+ALTER TABLE `tabel_detail_order`
+  ADD CONSTRAINT `tabel_detail_paket_id_paket_fk` FOREIGN KEY (`id_paket`) REFERENCES `tabel_detail_paket` (`id_paket`),
+  ADD CONSTRAINT `tabel_login_id_login_fk2` FOREIGN KEY (`id_login`) REFERENCES `tabel_login` (`id_login`),
+  ADD CONSTRAINT `tabel_order_id_order_fk` FOREIGN KEY (`id_order`) REFERENCES `tabel_order` (`id_order`);
 
 --
 -- Constraints for table `tabel_detail_paket`

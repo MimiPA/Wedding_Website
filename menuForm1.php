@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 include "cekSession.php";
 include "koneksi.php";
 
@@ -7,8 +8,12 @@ $queryKota = mysqli_query($conn, "SELECT * FROM tabel_kota WHERE nama_kota='$nam
 $infoKota = mysqli_fetch_array($queryKota);
 $id_kota = $infoKota['id_kota'];
 
+$paket_array = array();
 $queryDetail = mysqli_query($conn, "SELECT tabel_detail_paket.id_paket FROM tabel_kota, tabel_detail_paket WHERE tabel_kota.id_kota=tabel_detail_paket.id_kota AND tabel_kota.id_kota='$id_kota'");
-
+while ($infoPaket = mysqli_fetch_array($queryDetail)) {
+    $id = $infoPaket['id_paket'];
+    array_push($paket_array, $id);
+}
 ?>
 
 <!DOCTYPE html>
@@ -62,36 +67,51 @@ $queryDetail = mysqli_query($conn, "SELECT tabel_detail_paket.id_paket FROM tabe
                 <span>Weddings</span>
                 <h3>Our Services</h3>
             </div>
-            <form action="menuForm.php" method="POST">
-                <?php
-                $paket = 0;
-                ?>
+            <form action="prosesOrder.php" method="POST">
                 <div class="tpp-categoryContainer">
                     <div class="tpp-categoryBox">
                         <div class="tpp-radioButtons">
                             <?php
-                            for ($i = 1; $i <= 3; $i++) {
+                            $x = 0;
+
+                            for ($i = 0; $i < count($paket_array); $i++) {
+                                $isi_array = $paket_array[$i];
+                                $x++;
                             ?>
                                 <label class="custom-radio">
-                                    <input type="radio" class="radioBtnClass" name="paket" value="<?= $i; ?>" id="1" />
+                                    <input type="radio" class="radioBtnClass" name="id_paket" value="<?= $isi_array; ?>" />
                                     <div class="radio-btn">
-                                        <h1>Makassar</h1>
-                                        <img src="images/makassar<?=$i?>.jpg" alt="">
+                                        <h1><?= $nama_kota ?></h1>
+                                        <?php
+                                        if ($nama_kota == "Makassar") {
+                                        ?>
+                                            <img src="images/makassar<?= $x ?>.jpg" alt="">
+                                        <?php
+                                        } else if ($nama_kota == "Korea") {
+                                        ?>
+                                            <img src="images/korea<?= $x ?>.jpg" alt="">
+                                        <?php
+                                        } else if ($nama_kota == "Jepang") {
+                                        ?>
+                                            <img src="images/jepang<?= $x ?>.jpg" alt="">
+                                        <?php
+                                        } ?>
                                     </div>
                                 </label>
                             <?php
                             }
-                            for ($i = 1; $i <= 3; $i++) {
-                                $queryPaket = mysqli_query($conn, "SELECT * FROM tabel_paket, tabel_detail_paket WHERE tabel_paket.id_paket=tabel_detail_paket.id_paket AND tabel_detail_paket.id_kota='$id_kota' AND tabel_paket.id_paket='$i'");
+                            for ($i = 0; $i < count($paket_array); $i++) {
+                                $isi_array = $paket_array[$i];
+                                $queryPaket = mysqli_query($conn, "SELECT * FROM tabel_paket, tabel_detail_paket WHERE tabel_paket.id_paket=tabel_detail_paket.id_paket AND tabel_detail_paket.id_kota='$id_kota' AND tabel_paket.id_paket='$isi_array'");
                                 $infoPaket = mysqli_fetch_array($queryPaket);
-                                $queryPhotographer = mysqli_query($conn, "SELECT * FROM tabel_photographer, tabel_detail_paket WHERE tabel_detail_paket.id_photographer=tabel_photographer.id_photographer AND tabel_detail_paket.id_paket='$i'");
+                                $queryPhotographer = mysqli_query($conn, "SELECT * FROM tabel_photographer, tabel_detail_paket WHERE tabel_detail_paket.id_photographer=tabel_photographer.id_photographer AND tabel_detail_paket.id_paket='$isi_array'");
                                 $infoPhotographer = mysqli_fetch_array($queryPhotographer);
-                                $queryDecoration = mysqli_query($conn, "SELECT * FROM tabel_decoration, tabel_detail_paket WHERE tabel_detail_paket.id_decoration=tabel_decoration.id_decoration AND tabel_detail_paket.id_paket='$i'");
+                                $queryDecoration = mysqli_query($conn, "SELECT * FROM tabel_decoration, tabel_detail_paket WHERE tabel_detail_paket.id_decoration=tabel_decoration.id_decoration AND tabel_detail_paket.id_paket='$isi_array'");
                                 $infoDecoration = mysqli_fetch_array($queryDecoration);
-                                $querySovernir = mysqli_query($conn, "SELECT * FROM tabel_sovernir, tabel_detail_paket WHERE tabel_detail_paket.id_sovernir=tabel_sovernir.id_sovernir AND tabel_detail_paket.id_paket='$i'");
+                                $querySovernir = mysqli_query($conn, "SELECT * FROM tabel_sovernir, tabel_detail_paket WHERE tabel_detail_paket.id_sovernir=tabel_sovernir.id_sovernir AND tabel_detail_paket.id_paket='$isi_array'");
                                 $infoSovernir = mysqli_fetch_array($querySovernir);
                             ?>
-                                <div class="test22 <?= $i; ?>" style="background: pink;">
+                                <div class="test22 <?= $isi_array; ?>" style="background: pink;">
                                     <h1><?= $infoPaket['nama_paket']; ?></h1>
                                     <img src="images/<?= $infoPhotographer['gambar_photographer']; ?>" height="200px" />
                                     <ul>
@@ -110,6 +130,18 @@ $queryDetail = mysqli_query($conn, "SELECT tabel_detail_paket.id_paket FROM tabe
                                         <li>Nama Sovernir : <b><?= $infoSovernir['nama_sovernir']; ?></b></li>
                                         <li>Biaya Sovernir : <b><?= $infoSovernir['biaya_sovernir']; ?></b></li>
                                     </ul>
+                                    <hr>
+
+                                    <h2 style="text-align: right;">Total Biaya : Rp. <b><input type="text" name="biaya" value=<?= $infoPaket['biaya_paket']; ?> readonly /></b></h2>
+
+                                    <input type="hidden" name="nama_kota" value=<?= $nama_kota; ?> />
+
+                                    <button class="tpp-btnForm" type="submit" style="float: right;">
+                                        <div>
+                                            <h2>Order</h3>
+                                        </div>
+                                    </button>
+
                                 </div>
                             <?php
                             }
