@@ -2,6 +2,13 @@
 error_reporting(0);
 include "koneksi.php";
 ?>
+
+<?php
+if (isset($_GET['cari'])) {
+    $cari = $_GET['cari'];
+    $msg = $cari;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +16,7 @@ include "koneksi.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://kit.fontawesome.com/b4f4eda484.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -113,10 +120,82 @@ include "koneksi.php";
                     <div class="tpp-listContainer">
                         <div class="tpp-listViewBox">
                             <form action="dashboard.php" method="GET">
+                                <select name="kunci" required>
+                                    <option>Pilih Kunci Cari</option>
+                                    <option value="nama_paket">Nama Paket</option>
+                                    <option value="biaya_paket">Biaya Paket</option>
+                                    <option value="nama_photographer">Nama Photographer</option>
+                                    <option value="nama_decoration">Nama Decoration</option>
+                                </select>
                                 <input type="text" placeholder="Search" name="cari" required>
                                 <button class="btn btn-success" type="submit">Go</button>
                             </form>
-                            <button class="btn btn-success" type="submit"><a href=""><i class='fas fa-download'> New Package</i></a></button>
+
+                            <button type="button"><a href="index.php"><i class='fas fa-download'> New Package</i></a></button>
+
+                            <?php
+                            if (isset($msg)) {  // Check if $msg is not empty
+                                echo '<br>Hasil Cari : <b style="color:red;">' . $msg . '</b>'; // Display our message
+                            }
+                            ?>
+                            <table border="1">
+                                <thead>
+                                    <tr>
+                                        <th>Id_Paket</th>
+                                        <th>Nama Paket</th>
+                                        <th>Biaya Paket</th>
+                                        <th>Nama Photographer</th>
+                                        <th>Biaya Photographer</th>
+                                        <th>Nama Decoration</th>
+                                        <th>Biaya Decoration</th>
+                                        <th>Nama Sovernir</th>
+                                        <th>Biaya Sovernir</th>
+                                        <th colspan="2">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    if (isset($_GET['cari'])) {
+                                        $kunci = $_GET['kunci'];
+                                        $cari = $_GET['cari'];
+                                        $data = mysqli_query($conn, "SELECT * FROM tabel_paket, tabel_detail_paket, tabel_photographer, tabel_decoration, tabel_sovernir WHERE tabel_paket.id_paket=tabel_detail_paket.id_paket AND tabel_photographer.id_photographer=tabel_detail_paket.id_photographer AND tabel_decoration.id_decoration=tabel_detail_paket.id_decoration AND tabel_sovernir.id_sovernir=tabel_detail_paket.id_sovernir AND $kunci LIKE '%$cari%'");
+                                        $cek = mysqli_num_rows($data);
+
+                                        if($cek <= 0){
+                                            echo "<td colspan='11'><h1>Data Tidak Ditemukan</h1></td>";
+                                        }
+                                    } else {
+                                        $data = mysqli_query($conn, "SELECT * FROM tabel_paket, tabel_detail_paket, tabel_photographer, tabel_decoration, tabel_sovernir WHERE tabel_paket.id_paket=tabel_detail_paket.id_paket AND tabel_photographer.id_photographer=tabel_detail_paket.id_photographer AND tabel_decoration.id_decoration=tabel_detail_paket.id_decoration AND tabel_sovernir.id_sovernir=tabel_detail_paket.id_sovernir");
+                                    }
+                                    while ($d = mysqli_fetch_array($data)) {
+                                    ?>
+                                        <tr>
+                                            <td><?php echo $d['id_paket']; ?></td>
+                                            <td><?php echo $d['nama_paket']; ?></td>
+                                            <td><?php echo $d['biaya_paket']; ?></td>
+                                            <td>
+                                                <?php echo $d['nama_photographer']; ?>
+                                                <img src="images/<?= $d['gambar_photographer']; ?>" height="100px" />
+                                            </td>
+                                            <td><?php echo $d['biaya_photographer']; ?></td>
+                                            <td>
+                                                <?php echo $d['nama_decoration']; ?>
+                                                <img src="images/<?= $d['gambar_decoration']; ?>" height="100px" />
+                                            </td>
+                                            <td><?php echo $d['biaya_decoration']; ?></td>
+                                            <td>
+                                                <?php echo $d['nama_sovernir']; ?>
+                                                <img src="images/<?= $d['gambar_sovernir']; ?>" height="100px" />
+                                            </td>
+                                            <td><?php echo $d['biaya_sovernir']; ?></td>
+                                            <td><button type="button"><a href="edit.php?id_paket=<?php echo $d['id_paket']; ?>"><i class="fa fa-edit"></i> Edit</a></button></td>
+                                            <td><button type="button"><a href="hapus.php?id_paket=<?php echo $d['id_paket']; ?>"><i class="fa fa-trash-o"></i> Hapus</a></button></td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <div class="tpp-chartContainer">
