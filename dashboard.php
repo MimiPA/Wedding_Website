@@ -131,7 +131,7 @@ if (isset($_GET['cari'])) {
                                 <button class="btn btn-success" type="submit">Go</button>
                             </form>
 
-                            <button type="button"><a href="index.php"><i class='fas fa-download'> New Package</i></a></button>
+                            <button type="button"><a href="tambahPaket.php"><i class='fas fa-download'> New Package</i></a></button>
 
                             <?php
                             if (isset($msg)) {  // Check if $msg is not empty
