@@ -77,7 +77,7 @@ include "cekSession.php";
                 <div class="owl-carousel">
                     <div class="tpp-items">
                         <a href="menuForm1.php?nama_kota=Makassar">
-                            <div><img src="assets/img/makassar.png" alt=""></div>
+                            <div><img src="assets/img/kota1.jpg" alt=""></div>
                             <div class="tpp-itemsBtn">
                                 <h2>Makassar</h2>
                                 <span>Indahnya Pantai Losari Makassar</span>
@@ -86,7 +86,7 @@ include "cekSession.php";
                     </div>
                     <div class="tpp-items">
                         <a href="menuForm1.php?nama_kota=Korea">
-                            <div><img src="assets/img/korea.jpg" alt=""></div>
+                            <div><img src="assets/img/kota2.jpg" alt=""></div>
                             <div class="tpp-itemsBtn">
                                 <h2>Korea</h2>
                                 <span>Indahnya Hanbok Kota Seoul</span>
@@ -95,7 +95,7 @@ include "cekSession.php";
                     </div>
                     <div class="tpp-items">
                         <a href="menuForm1.php?nama_kota=Jepang">
-                            <div><img src="assets/img/jepang.jpg" alt=""></div>
+                            <div><img src="assets/img/kota3.jpg" alt=""></div>
                             <div class="tpp-itemsBtn">
                                 <h2>Jepang</h2>
                                 <span>Indahnya Bunga Sakura Tokyo</span>

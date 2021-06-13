@@ -53,9 +53,34 @@ include "koneksi.php";
                 <span>Weddings</span>
             </div>
             <form action="prosesTambah.php" method="POST">
+                <div class="tpp-boxInput">
+                    <h1 style="text-align: center;">Nama Paket</h1>
+                    <div class="tpp-boxInputinside">
+                        <input type="text" maxlength="20" name="nama_paket" placeholder="Glowing Package" required>
+                    </div>
+                </div>
+
                 <div class="tpp-categoryContainer">
                     <div class="tpp-categoryBox">
                         <div class="tpp-radioButtons">
+                            <h1 style="text-align: center;">Kota Pilihan</h1>
+                            <?php
+                            $i = 1;
+                            $dataKota = mysqli_query($conn, "SELECT * FROM tabel_kota");
+                            while ($dKota = mysqli_fetch_array($dataKota)) {
+                            ?>
+                                <label class="custom-radio">
+                                    <input type="radio" class="radioBtnClass" name="id_kota" value="<?= $dKota['id_kota']; ?>" />
+                                    <div class="radio-btn">
+                                        <h1><?= $dKota['nama_kota'] ?></h1>
+                                        <img src="assets/img/kota<?= $i; ?>.jpg" alt="">
+                                    </div>
+                                </label>
+                            <?php
+                                $i++;
+                            } ?>
+
+                            <hr>
                             <h1 style="text-align: center;">Our Photographer</h1>
                             <?php
                             $data = mysqli_query($conn, "SELECT * FROM tabel_photographer");
@@ -94,7 +119,7 @@ include "koneksi.php";
                             while ($dSovernir = mysqli_fetch_array($dataSovernir)) {
                             ?>
                                 <label class="custom-radio">
-                                    <input type="radio" class="radioBtnClass" name="id_decoration" value="<?= $dSovernir['id_sovernir']; ?>" />
+                                    <input type="radio" class="radioBtnClass" name="id_sovernir" value="<?= $dSovernir['id_sovernir']; ?>" />
                                     <div class="radio-btn">
                                         <h1><?= $dSovernir['nama_sovernir'] ?><br>Biaya : <?= $dSovernir['biaya_sovernir'] ?></h1>
                                         <img src="images/<?= $dSovernir['gambar_sovernir'] ?>" alt="">
@@ -102,7 +127,6 @@ include "koneksi.php";
                                 </label>
                             <?php
                             } ?>
-                            <input type="hidden" name="nama_kota" value=<?= $nama_kota; ?> />
 
 
                         </div>

@@ -95,13 +95,13 @@ if (isset($_POST['login'])) {
                                 <div class="tpp-boxInput">
                                     <label for="tpp-boxLabel">Nama :</label>
                                     <div class="tpp-boxInputinside">
-                                        <input type="text" name="nama" placeholder="Arnold Nasir" required>
+                                        <input type="text" maxlength="30" name="nama" placeholder="Arnold Nasir" required>
                                     </div>
                                 </div>
                                 <div class="tpp-boxInput">
                                     <label for="tpp-boxLabel">Password :</label>
                                     <div class="tpp-boxInputinside">
-                                        <input type="password" name="password" placeholder="**********" required>
+                                        <input type="password" maxlength="10" name="password" placeholder="**********" required>
                                     </div>
                                 </div>
                                 <div class="tpp-boxBtn">
