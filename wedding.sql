@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2021 at 06:50 PM
+-- Generation Time: Jun 13, 2021 at 04:49 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -68,7 +68,8 @@ CREATE TABLE `tabel_detail_order` (
 INSERT INTO `tabel_detail_order` (`id_order`, `id_login`, `id_paket`) VALUES
 (1, 2, 1),
 (2, 2, 1),
-(3, 2, 5);
+(3, 2, 5),
+(4, 2, 5);
 
 -- --------------------------------------------------------
 
@@ -96,8 +97,7 @@ INSERT INTO `tabel_detail_paket` (`id_paket`, `id_kota`, `id_photographer`, `id_
 (5, 2, 5, 5, 5),
 (6, 2, 8, 8, 8),
 (7, 3, 3, 3, 3),
-(8, 3, 6, 6, 6),
-(9, 3, 9, 9, 9);
+(8, 3, 6, 6, 6);
 
 -- --------------------------------------------------------
 
@@ -178,7 +178,8 @@ CREATE TABLE `tabel_order` (
 INSERT INTO `tabel_order` (`id_order`, `tanggal_pesan`, `total_biaya`) VALUES
 (1, '2021-06-10 00:45:48', 13100000),
 (2, '2021-06-10 00:46:44', 13100000),
-(3, '2021-06-10 00:48:02', 8010000);
+(3, '2021-06-10 00:48:02', 8010000),
+(4, '2021-06-10 22:02:53', 8010000);
 
 -- --------------------------------------------------------
 
@@ -204,8 +205,7 @@ INSERT INTO `tabel_paket` (`id_paket`, `nama_paket`, `biaya_paket`) VALUES
 (5, 'Gold Wedding', 8010000),
 (6, 'Miny Bless', 9030000),
 (7, 'Royal Family', 4525000),
-(8, 'Middle Package', 6550000),
-(9, 'Brilliant Glamour', 12015000);
+(8, 'Middle Package', 6550000);
 
 -- --------------------------------------------------------
 
@@ -359,7 +359,7 @@ ALTER TABLE `tabel_login`
 -- AUTO_INCREMENT for table `tabel_order`
 --
 ALTER TABLE `tabel_order`
-  MODIFY `id_order` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_order` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tabel_paket`
