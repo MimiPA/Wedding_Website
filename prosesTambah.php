@@ -18,8 +18,28 @@ if (isset($id_kota)) {
                 $biaya_decoration = $info['biaya_decoration'];
                 $biaya_sovernir = $info['biaya_sovernir'];
                 $total = $biaya_photographer + $biaya_decoration + $biaya_sovernir;
-                echo $total;
-                echo $nama_paket;
+
+                $queryTambah = mysqli_query($conn, "INSERT INTO tabel_paket (nama_paket, biaya_paket) VALUES ('$nama_paket', '$total')");
+
+                if ($queryTambah) {
+                    //Mengambil id_paket
+                    $cekId = mysqli_query($conn, "SELECT id_paket FROM tabel_paket WHERE nama_paket='$nama_paket' AND biaya_paket='$total'");
+                    $info = mysqli_fetch_array($cekId);
+                    $id_paket = $info['id_paket'];
+
+                    $queryDetail = mysqli_query($conn, "INSERT INTO tabel_detail_paket (id_paket, id_kota, id_photographer, id_decoration, id_sovernir) VALUES ('$id_paket', '$id_kota', '$id_photographer', '$id_decoration', '$id_sovernir')");
+
+                    if ($queryDetail) {
+                        echo "<script>alert('Berhasil Menambah Paket')</script>";
+                        echo "<script>window.location.href='dashboard.php';</script>";
+                    } else {
+                        echo "<script>alert('Gagal Menambah Paket')</script>";
+                        echo "<script>window.location.href='tambahPaket.php';</script>";
+                    }
+                } else {
+                    echo "<script>alert('Gagal Menambah Paket')</script>";
+                    echo "<script>window.location.href='tambahPaket.php';</script>";
+                }
             } else {
                 echo "<script>alert('Mohon Pilih Sovernir')</script>";
                 echo "<script>window.location.href='tambahPaket.php';</script>";
