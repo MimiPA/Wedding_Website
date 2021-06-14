@@ -1,6 +1,8 @@
 <?php
 error_reporting(0);
+include "cekAdmin.php";
 include "koneksi.php";
+include "cekSession.php";
 ?>
 
 <?php
@@ -31,10 +33,17 @@ if (isset($_GET['cari'])) {
     <div class="tpp-page">
         <aside class="tpp-navbar">
             <h1 class="tpp-logo">
-                <a href="home.php">AAA<i class="far fa-registered"></i></a>
+                <a href="home.php"><?php echo $username; ?><i class="far fa-registered"></i></a>
             </h1>
             <nav class="tpp-listmenu">
                 <ul>
+                    <?php
+                    $cekAdmin = mysqli_query($conn, "SELECT * FROM tabel_login, tabel_login_level WHERE username='$username' AND level='admin' AND tabel_login.id_login=tabel_login_level.id_login");
+                    $cekLevel = mysqli_num_rows($cekAdmin);
+                    if ($cekLevel > 0) {
+                        echo '<li><a href="dashboard.php"> Dashboard</a></li>';
+                    }
+                    ?>
                     <li><a href="#"> Photographer</a></li>
                     <li><a href="#"> Decoration</a></li>
                     <li><a href="#"> Sovernir</a></li>
@@ -161,7 +170,7 @@ if (isset($_GET['cari'])) {
                                         $data = mysqli_query($conn, "SELECT * FROM tabel_paket, tabel_detail_paket, tabel_photographer, tabel_decoration, tabel_sovernir WHERE tabel_paket.id_paket=tabel_detail_paket.id_paket AND tabel_photographer.id_photographer=tabel_detail_paket.id_photographer AND tabel_decoration.id_decoration=tabel_detail_paket.id_decoration AND tabel_sovernir.id_sovernir=tabel_detail_paket.id_sovernir AND $kunci LIKE '%$cari%'");
                                         $cek = mysqli_num_rows($data);
 
-                                        if($cek <= 0){
+                                        if ($cek <= 0) {
                                             echo "<td colspan='11'><h1>Data Tidak Ditemukan</h1></td>";
                                         }
                                     } else {

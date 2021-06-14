@@ -16,7 +16,7 @@ if (isset($_POST['login'])) {
 
             if ($cek > 0) {
                 //Cek Yang Login Admin or User
-                $cekAdmin = mysqli_query($conn, "SELECT * FROM tabel_login_level WHERE id_login='$id_login' AND level='$admin'");
+                $cekAdmin = mysqli_query($conn, "SELECT * FROM tabel_login_level WHERE id_login='$id_login' AND level='admin'");
                 $cekLevel = mysqli_num_rows($cekAdmin);
 
                 if ($cekLevel > 0) {

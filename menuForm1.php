@@ -43,6 +43,13 @@ while ($infoPaket = mysqli_fetch_array($queryDetail)) {
             </h1>
             <nav class="tpp-listmenu">
                 <ul>
+                    <?php
+                    $cekAdmin = mysqli_query($conn, "SELECT * FROM tabel_login, tabel_login_level WHERE username='$username' AND level='admin' AND tabel_login.id_login=tabel_login_level.id_login");
+                    $cekLevel = mysqli_num_rows($cekAdmin);
+                    if ($cekLevel > 0) {
+                        echo '<li><a href="dashboard.php"> Dashboard</a></li>';
+                    }
+                    ?>
                     <li><a href="#"> Photographer</a></li>
                     <li><a href="#"> Decoration</a></li>
                     <li><a href="#"> Sovernir</a></li>

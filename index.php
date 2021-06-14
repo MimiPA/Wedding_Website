@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://kit.fontawesome.com/b4f4eda484.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
@@ -75,7 +76,7 @@
                 <div class="owl-carousel">
                     <div class="tpp-items">
                         <a href="sign_in.php">
-                            <div><img src="assets/img/makassar.png" alt=""></div>
+                            <div><img src="assets/img/kota1.jpg" alt=""></div>
                             <div class="tpp-itemsBtn">
                                 <h2>Makassar</h2>
                                 <span>Indahnya Pantai Losari Makassar</span>
@@ -84,7 +85,7 @@
                     </div>
                     <div class="tpp-items">
                         <a href="sign_in.php">
-                            <div><img src="assets/img/korea.jpg" alt=""></div>
+                            <div><img src="assets/img/kota2.jpg" alt=""></div>
                             <div class="tpp-itemsBtn">
                                 <h2>Korea</h2>
                                 <span>Indahnya Hanbok Kota Seoul</span>
@@ -93,7 +94,7 @@
                     </div>
                     <div class="tpp-items">
                         <a href="sign_in.php">
-                            <div><img src="assets/img/jepang.jpg" alt=""></div>
+                            <div><img src="assets/img/kota3.jpg" alt=""></div>
                             <div class="tpp-itemsBtn">
                                 <h2>Jepang</h2>
                                 <span>Indahnya Bunga Sakura Tokyo</span>

@@ -1,6 +1,7 @@
 <?php
+error_reporting(0);
 require_once("koneksi.php");
- 
+include "cekSession.php";
 $id_paket = $_GET['id_paket'];
 
 $query = "DELETE FROM tabel_detail_paket WHERE id_paket=$id_paket";

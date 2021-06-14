@@ -8,6 +8,7 @@ include "cekSession.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://kit.fontawesome.com/b4f4eda484.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
@@ -24,6 +25,14 @@ include "cekSession.php";
             </h1>
             <nav class="tpp-listmenu">
                 <ul>
+                    <?php
+                    include "koneksi.php";
+                    $cekAdmin = mysqli_query($conn, "SELECT * FROM tabel_login, tabel_login_level WHERE username='$username' AND level='admin' AND tabel_login.id_login=tabel_login_level.id_login");
+                    $cekLevel = mysqli_num_rows($cekAdmin);
+                    if ($cekLevel > 0) {
+                        echo '<li><a href="dashboard.php"> Dashboard</a></li>';
+                    }
+                    ?>
                     <li><a href="#"> Photographer</a></li>
                     <li><a href="#"> Decoration</a></li>
                     <li><a href="#"> Sovernir</a></li>
@@ -40,7 +49,7 @@ include "cekSession.php";
                 </div>
             </div>
         </aside>
-        
+
         <div class="tpp-main" id="home">
             <aside class="tpp-slider">
                 <div class="swiper-container">

@@ -1,6 +1,8 @@
 <?php
 error_reporting(0);
 include "koneksi.php";
+include "cekSession.php";
+include "cekAdmin.php";
 $nama_paket = $_POST['nama_paket'];
 $id_kota = $_POST['id_kota'];
 $id_photographer = $_POST['id_photographer'];
