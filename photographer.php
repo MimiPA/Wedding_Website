@@ -2,7 +2,6 @@
 error_reporting(0);
 include "cekSession.php";
 include "koneksi.php";
-include "cekAdmin.php";
 ?>
 
 <!DOCTYPE html>
@@ -60,34 +59,10 @@ include "cekAdmin.php";
                 <span>Weddings</span>
             </div>
             <form action="prosesTambah.php" method="POST">
-                <div class="tpp-boxInput">
-                    <h1 style="text-align: center;">Nama Paket</h1>
-                    <div class="tpp-boxInputinside">
-                        <input type="text" maxlength="20" name="nama_paket" placeholder="Glowing Package" required>
-                    </div>
-                </div>
 
                 <div class="tpp-categoryContainer">
                     <div class="tpp-categoryBox">
                         <div class="tpp-radioButtons">
-                            <h1 style="text-align: center;">Kota Pilihan</h1>
-                            <?php
-                            $i = 1;
-                            $dataKota = mysqli_query($conn, "SELECT * FROM tabel_kota");
-                            while ($dKota = mysqli_fetch_array($dataKota)) {
-                            ?>
-                                <label class="custom-radio">
-                                    <input type="radio" class="radioBtnClass" name="id_kota" value="<?= $dKota['id_kota']; ?>" />
-                                    <div class="radio-btn">
-                                        <h1><?= $dKota['nama_kota'] ?></h1>
-                                        <img src="assets/img/kota<?= $i; ?>.jpg" alt="">
-                                    </div>
-                                </label>
-                            <?php
-                                $i++;
-                            } ?>
-
-                            <hr>
                             <h1 style="text-align: center;">Our Photographer</h1>
                             <?php
                             $data = mysqli_query($conn, "SELECT * FROM tabel_photographer");
@@ -102,47 +77,8 @@ include "cekAdmin.php";
                                 </label>
                             <?php
                             } ?>
-
-                            <hr>
-                            <h1 style="text-align: center;">Our Decoration</h1>
-                            <?php
-                            $dataDecor = mysqli_query($conn, "SELECT * FROM tabel_decoration");
-                            while ($dDecor = mysqli_fetch_array($dataDecor)) {
-                            ?>
-                                <label class="custom-radio">
-                                    <input type="radio" class="radioBtnClass" name="id_decoration" value="<?= $dDecor['id_decoration']; ?>" />
-                                    <div class="radio-btn">
-                                        <h1><?= $dDecor['nama_decoration'] ?><br>Biaya : <?= $dDecor['biaya_decoration'] ?></h1>
-                                        <img src="images/<?= $dDecor['gambar_decoration'] ?>" alt="">
-                                    </div>
-                                </label>
-                            <?php
-                            } ?>
-
-                            <hr>
-                            <h1 style="text-align: center;">Our Sovernir</h1>
-                            <?php
-                            $dataSovernir = mysqli_query($conn, "SELECT * FROM tabel_sovernir");
-                            while ($dSovernir = mysqli_fetch_array($dataSovernir)) {
-                            ?>
-                                <label class="custom-radio">
-                                    <input type="radio" class="radioBtnClass" name="id_sovernir" value="<?= $dSovernir['id_sovernir']; ?>" />
-                                    <div class="radio-btn">
-                                        <h1><?= $dSovernir['nama_sovernir'] ?><br>Biaya : <?= $dSovernir['biaya_sovernir'] ?></h1>
-                                        <img src="images/<?= $dSovernir['gambar_sovernir'] ?>" alt="">
-                                    </div>
-                                </label>
-                            <?php
-                            } ?>
-
-
                         </div>
                     </div>
-                    <button class="tpp-btnForm" type="submit" style="display:block; width: 100%; background:greenyellow;">
-                        <div>
-                            <h2>Tambah Paket</h3>
-                        </div>
-                    </button>
                 </div>
             </form>
             <div class="tpp-footer2">

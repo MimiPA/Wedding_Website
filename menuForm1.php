@@ -25,12 +25,12 @@ while ($infoPaket = mysqli_fetch_array($queryDetail)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kota</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://kit.fontawesome.com/b4f4eda484.js" crossorigin="anonymous"></script>
+    <script src="assets/js/b4f4eda484.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/css/swiper-bundle.css" />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/radiobtn.js"></script>
 
 </head>
@@ -50,10 +50,9 @@ while ($infoPaket = mysqli_fetch_array($queryDetail)) {
                         echo '<li><a href="dashboard.php"> Dashboard</a></li>';
                     }
                     ?>
-                    <li><a href="#"> Photographer</a></li>
-                    <li><a href="#"> Decoration</a></li>
-                    <li><a href="#"> Sovernir</a></li>
-                    <li><a href="#"> Package</a></li>
+                    <li><a href="photographer.php"> Photographer</a></li>
+                    <li><a href="decoration.php"> Decoration</a></li>
+                    <li><a href="sovernir.php"> Sovernir</a></li>
                     <li><a href="logout.php"> logout</a></li>
                 </ul>
             </nav>
@@ -176,8 +175,8 @@ while ($infoPaket = mysqli_fetch_array($queryDetail)) {
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/owl.carousel.min.js"></script>
 <script src="assets/js/owl.auto.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="assets/js/swiper-bundle.js"></script>
+<script src="assets/js/swiper-bundle.min.js"></script>
 <script src="assets/js/swipper.js"></script>
 
 </html>
